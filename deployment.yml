@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: hello-world  
+    spec:     # pod spec                  
+      containers: 
+      - name: hello-world 
+        image: gcr.io/phineasrt/hello-world-image:v1 # image we pushed
+        ports:
+        - containerPort: 3000
