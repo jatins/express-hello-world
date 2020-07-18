@@ -6,7 +6,7 @@ module.exports = (shipit) => {
 
   shipit.initConfig({
     default: {
-      deployTo: "/home/drtob/hello",
+      deployTo: "/var/apps/hello",
       repositoryUrl: "https://github.com/drtobbyas/express-hello-world.git",
       keepReleases: 3,
       shared: {
@@ -15,7 +15,7 @@ module.exports = (shipit) => {
       },
     },
     production: {
-      servers: "root@206.81.15.85",
+      servers: "root@161.35.50.81",
     },
   });
 
