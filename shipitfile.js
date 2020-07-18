@@ -72,9 +72,9 @@ shipit.blTask('npm-install', async () => {
 });
 
 shipit.blTask('pm2-server', async () => {
-  await shipit.remote(`pm2 delete -s ${appName} || :`);
+  await shipit.remote(`su - drtob pm2 delete -s ${appName} || :`);
   await shipit.remote(
-    `pm2 start ${ecosystemFilePath} --env production --watch true`
+    `su - drtob pm2 start ${ecosystemFilePath} --env production --watch true`
   );
 });
 
