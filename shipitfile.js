@@ -2,11 +2,11 @@ module.exports = (shipit) => {
   require("shipit-deploy")(shipit);
   require("shipit-shared")(shipit);
 
-  const appName = "hello";
+  const appName = "express-hello-world2";
 
   shipit.initConfig({
     default: {
-      deployTo: "/var/apps/hello",
+      deployTo: "/home/drtob/express-hello-world2",
       repositoryUrl: "https://github.com/drtobbyas/express-hello-world.git",
       keepReleases: 3,
       shared: {
@@ -15,7 +15,7 @@ module.exports = (shipit) => {
       },
     },
     production: {
-      servers: "nodejs@161.35.50.81",
+      servers: "drtob@134.209.82.147",
     },
   });
 
@@ -26,7 +26,7 @@ module.exports = (shipit) => {
     "ecosystem.config.js"
   );
 
-  // Our listeners and tasks will go here
+//   Our listeners and tasks will go here
 
   shipit.on("updated", () => {
     shipit.start("npm-install", "copy-config");
@@ -72,9 +72,9 @@ shipit.blTask('npm-install', async () => {
 });
 
 shipit.blTask('pm2-server', async () => {
-  await shipit.remote(`su - drtob pm2 delete -s ${appName} || :`);
+  await shipit.remote(`pm2 delete -s ${appName} || :`);
   await shipit.remote(
-    `su - drtob pm2 start ${ecosystemFilePath} --env production --watch true`
+    `pm2 start ${ecosystemFilePath} --env production --watch true`
   );
 });
 

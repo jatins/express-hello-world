@@ -2,8 +2,8 @@
 module.exports = {
 apps: [
   {
-    name: 'hello',
-    script: '/home/drtob/hello/releases/20200718113441/index.js',
+    name: 'express-hello-world',
+    script: '/home/drtob/express-hello-world/releases/20200718161242/index.js',
     watch: true,
     autorestart: true,
     restart_delay: 1000,
