@@ -15,7 +15,7 @@ module.exports = (shipit) => {
       },
     },
     production: {
-      servers: "drtob@206.81.15.85",
+      servers: "root@206.81.15.85",
     },
   });
 
