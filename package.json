@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
+    "chai-http": "^4.3.0",
+    "mochai": "^0.2.5",
     "shipit-cli": "^5.3.0",
     "shipit-deploy": "^5.3.0",
     "shipit-shared": "^4.4.2"
