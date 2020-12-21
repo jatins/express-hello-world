@@ -13,7 +13,7 @@ $ npm run start
 ## Build Docker image
 
 ```
-$ cd ~/express-hello-world  # or whatever is the directory location of this repo
+$ cd ~/express-hello-world 
 $ docker build -t hello-world-image .
 ```
 
