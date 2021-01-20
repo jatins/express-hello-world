@@ -1,0 +1,13 @@
+name: "Test github actions"
+ 
+on:
+  push:
+jobs:
+  test-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout forevertga:express-hello-world"
+        uses: actions/checkout@v1
+        with:
+          repository: "forevertga/express-hello-world"
+          ref: "master"
